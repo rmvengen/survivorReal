@@ -21,6 +21,6 @@ router.get('/contestants', ctrlPlayerData.contestantsDataReadAll);
 //router.get('/playerdata', ctrlPlayerData.playerDataReadAll);
 
 /* API KEYS */
-//router.get('/omdbapi/:t/:y', ctrlOmdbApi.getWeatherData);
+router.get('/omdbapi/:title/:year/:key', ctrlOmdbApi.getOmdb);
 
 module.exports = router;

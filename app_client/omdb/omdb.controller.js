@@ -3,7 +3,7 @@
     angular
         .module('survivorApp')
         .controller('omdbCtrl', omdbCtrl);
-
+//changed from onlinemovieDatabase to omdb
     omdbCtrl.$inject = ['$scope', 'SelectedData', 'onlinemovieDatabase'];
 
     function omdbCtrl($scope, SelectedData, onlinemovieDatabase) {
@@ -50,7 +50,7 @@
                 });
         }*/
          //refactored for Angular 1.6 - removed success/error, used Promises...
-    vm.getShowData = function() {
+    vm.getOmdbData = function() {
       onlinemovieDatabase.getomdbapi()
         .then(function(response) {
           vm.showData = response.data;

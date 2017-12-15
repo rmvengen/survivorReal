@@ -22,7 +22,7 @@ module.exports.contestantsDataReadAll = function(req, res) {
                 console.log(err);
                 sendJSONresponse(res, 404, err);
             }
-            console.log(contestantsData);
+            //console.log(contestantsData);
             sendJSONresponse(res, 200, contestantsData);
         });
 }
@@ -51,7 +51,7 @@ module.exports.seasonsDataReadAll = function(req, res) {
         .find({})
         .exec(function(err, seasonsData) {
             if (err) {
-                console.log(err);
+                //console.log(err);
                 sendJSONresponse(res, 404, err);
             }
             console.log(seasonsData);
