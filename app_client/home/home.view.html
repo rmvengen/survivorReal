@@ -9,7 +9,12 @@
                 <div class="col-lg-12">
                     <h1>{{vm.content}}</h1>
                     <p>This application uses data from web services and real-time online movie database to show Survivor Data.</p>
-                    <p class="bg-info"><strong>Show Data</strong>: {{vm.omdbData.Title}} {{vm.omdbData.Year}} </p>
+                    <p class="bg-info"><strong>Show Information</strong> </p>
+                            <p>Title: {{vm.omdbData.Title}} </p>
+                            <p>Year: {{vm.omdbData.Year}} </p>
+                            <p>Release Date: {{vm.omdbData.Released}}</p>
+                            <p>Genre: {{vm.omdbData.Genre}}</p>
+                            <p>Type: {{vm.omdbData.Type}}</p>
                     
                     <button type="button" class="btn btn-default btn-link" id="menu-toggle" ng-model="vm.toggle" ng-click="vm.toggle=!vm.toggle">Toggle Menu</button>
                 </div>

@@ -38,9 +38,11 @@
                                         ng-options="contestant.contestantName for contestant in vm.contestantsData"></select>
                                 <p class="bg-info" ng-bind="vm.selectedContestantName.contestantName"></p>
                             </div>   
-                            <p> This is season {{vm.selectedContestantName.seasonName}}</p>
-                            <p>{{vm.selectedContestantName.Age}} Age </p>
-                            <p>{{vm.selectedContestantName.finish}} Finish</p>
+                            <p>Season: {{vm.selectedContestantName.seasonName}}</p>
+                            <p>Age: {{vm.selectedContestantName.Age}} </p>
+                            <p>Living Location: {{vm.selectedContestantName.livingLocationCity}} , {{vm.selectedContestantName.livingLocationState}}</p>
+                            <p>Finish: {{vm.selectedContestantName.finish}} </p>
+                            
                             
                             <div class="form-group">
                                 <label for="selectSeasonName">Season Name</label>
@@ -50,10 +52,11 @@
                                         ng-options="season.seasonName for season in vm.seasonsData"></select>
                                 <p class="bg-info" ng-bind="vm.selectedSeasonName.seasonName"></p>
                             </div>   
-                            <p> SeasonNumber: {{vm.selectedSeasonName.seasonNumber}}</p>
+                            <p>SeasonNumber: {{vm.selectedSeasonName.seasonNumber}}</p>
                             <p>Location of Season: {{vm.selectedSeasonName.seasonLocation}}</p>
                             <p>Year of Season: {{vm.selectedSeasonName.yearOfSeason}}</p>
                             <p>Month of Season: {{vm.selectedSeasonName.monthOfSeason}}</p>
+                            
                             
                             <div class="form-group">
                                 <label for="selectTribeName">Tribe</label>
