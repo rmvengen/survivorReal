@@ -15,9 +15,9 @@
             return $http.get('/api/seasons/');
         }
         
-        var getLandingDataForWeight = function(weight) {
-            return $http.get('/api/climbData/' + weight);
-        }        
+        //var getLandingDataForWeight = function(weight) {
+          //  return $http.get('/api/climbData/' + weight);
+        //}        
 
         return {
             getContestantsData: getContestantsData,

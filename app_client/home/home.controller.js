@@ -17,6 +17,26 @@
     
     vm.content = "Survivor Data";
     
+    //add here
+     vm.getOmdbData = function()
+    {
+      console.log("Getting data?");
+                    OmdbData.getOmdbData()
+                    .then(function(response){
+                        vm.omdbData = response.data;
+                        console.log(vm.omdbData);
+                        console.log(vm.omdbData.title)
+                    })
+                    .catch(function(e){
+                        console.log(e);
+                    });
+                    
+                };
+          vm.getOmdbData();
+    }
+    //end add
+    
+    /*
     vm.selectedContestantName = "";
     vm.selectedSeasonName = "";
     vm.selectedAge = "";
@@ -36,5 +56,5 @@
       //.selectedAge = SelectedData.selectedAge;
    // }      
   }
-
+*/
 })();

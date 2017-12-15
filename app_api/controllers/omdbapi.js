@@ -9,7 +9,30 @@ var sendJSONresponse = function(res, status, content)
 }
 
 /* GET all API Key Values Values */
-module.exports.getSurvivorData = function(req, res)
+module.exports.getOmdb = function(req, res){
+    console.log("Retrieving Key Values");
+    var id = req.params.id;
+    console.log(id);
+}
+
+//var request = require("request");
+
+var options = { method: 'GET',
+  url: 'http://www.omdbapi.com/',
+  qs: { t: 'Survivor', y: '2001', apikey: '8f04f045' },
+  headers: 
+   { 'Postman-Token': 'b8103c38-d30a-a490-d762-f7692458ba75',
+     'Cache-Control': 'no-cache' } };
+
+request(options, function (error, response, body) {
+  if (error) throw new Error(error);
+
+  console.log(body);
+ // sendJSONresponse(res, "200", body);
+});
+
+
+/*module.exports.getSurvivorData = function(req, res)
 {
     console.log("Retrieving Key Store Values");
     
@@ -26,5 +49,5 @@ module.exports.getSurvivorData = function(req, res)
         //console.log(body);
         sendJSONresponse(res, "200", body); 
     });
-
-}
+*/
+//}

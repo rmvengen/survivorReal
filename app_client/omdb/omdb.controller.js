@@ -13,9 +13,9 @@
 
         vm.content = "Online Movie Database";
 
-        vm.selectedTitle = "";
-        vm.selectedArrivalICAO = "";
-        vm.selectedWeight = "";
+       // vm.selectedTitle = "";
+        //vm.selectedArrivalICAO = "";
+        //vm.selectedWeight = "";
 
         //check selected Departure
         if (SelectedData.selectedTitle !== null) {
@@ -33,7 +33,7 @@
         }
 
         //refactored for Angular 1.6 - removed success/error, used Promises...
-        vm.getDepartureWeather = function() {
+       /* vm.getDepartureWeather = function() {
             
             var t = vm.selectedTitle;
             console.log(t);
@@ -48,7 +48,18 @@
                 .catch(function(e) {
                     console.log(e);
                 });
-        }
+        }*/
+         //refactored for Angular 1.6 - removed success/error, used Promises...
+    vm.getShowData = function() {
+      onlinemovieDatabase.getomdbapi()
+        .then(function(response) {
+          vm.showData = response.data;
+          console.log("TESTING:" + vm.omdbapi);
+        })
+        .catch(function(e) {
+          console.log(e);
+        });
+    }
 
         //refactored for Angular 1.6 - removed success/error, used Promises...        
         vm.getArrivalWeather = function() {
@@ -68,7 +79,10 @@
         }
         
         //call services
-        vm.getDepartureWeather();
+        vm.getShowData();
+        vm.getContestantsData();
+    vm.getSeasonsData();
+       // vm.getDepartureWeather();
         vm.getArrivalWeather();
 
     }
